@@ -5,13 +5,16 @@
  */
 
 const app = require('../app');
-const debug = require('debug')('backherreria:server');
+const debug = require('debug')('travelagencyapp:server');
 const http = require('http');
 
-//Config de la BD
+//Config .env
+
 require('dotenv').config();
 
-require('../config/db.js')
+//Config db
+
+require('../config/db');
 
 /**
  * Get port from environment and store in Express.

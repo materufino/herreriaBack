@@ -1,0 +1,27 @@
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "username": "Miquel",
+    "surname":"Abella",
+    "rango":"maestre",
+    "guild":"herrero",
+    "email": "mag@gmail.com",
+    "password": "password"    
+}
+
+###
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "mag@gmail.com",
+    "password": "password"
+}
+
+###
+DELETE http://localhost:3000/api/users/5
+
+###
+
+GET http://localhost:3000/api/users
