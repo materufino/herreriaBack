@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+    "name": "Ataulfo",
+    "surname":"El viejo",
+    "address":"El puente roto a la izquierda",
+    "birthdate":"1986-02-23",
+    "email":"ataulfoviejo@gmail.com",
+    "age":"37"
+}

@@ -29,7 +29,7 @@ const checkToken = async (req, res, next) => {
 }
 
 const checkMaster = (req, res, next) => {
-    if (req.user.range !== 'maestre') {
+    if (req.user.rango !== 'maestre') {
         return res.json({ fatal: 'Debes tener rango de Maestre para acceder a esta zona' });
     }
     next();
