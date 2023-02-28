@@ -28,9 +28,9 @@ const checkToken = async (req, res, next) => {
     next();
 }
 
-const checkMaster = (req, res, next) => {
-    if (req.user.rango !== 'maestre') {
-        return res.json({ fatal: 'Debes tener rango de Maestre para acceder a esta zona' });
+const checkAdmin = (req, res, next) => {
+    if (req.user.range !== 'admin') {
+        return res.json({ fatal: 'Debes tener rango de Administrador para acceder a esta zona' });
     }
     next();
 }
@@ -45,5 +45,5 @@ const checkRole = (role1, role2) => {
 }
 
 module.exports = {
-    checkToken, checkMaster, checkRole
+    checkToken, checkAdmin, checkRole
 }

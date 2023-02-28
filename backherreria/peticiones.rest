@@ -17,7 +17,7 @@ Content-Type: application/json
 {
     "username": "Miquel",
     "surname":"Abella",
-    "rango":"maestre",
+    "range":"maestre",
     "guild":"herrero",
     "email": "mag@gmail.com",
     "password": "password"    
