@@ -18,10 +18,10 @@ const getByGuild = (userGuild) => {
 
 //POST
 
-const create = ({ username, surname, range, guild, email, password }) => {
+const create = ({ username, surname, range, password }) => {
     return db.query(
-        'insert into users (username, surname, range, guild, email, password) values (?, ?, ?, ?, ?, ?)',
-        [username, surname, range, guild, email, password]
+        'insert into users (username, surname, range, password) values (?, ?, ?, ?)',
+        [username, surname, range, password]
     )
 }
 

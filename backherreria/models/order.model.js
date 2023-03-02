@@ -5,9 +5,11 @@ const { TokenExpiredError } = require("jsonwebtoken");
 const getAll = () => {
     return db.query('select * from orders');
 }
+
 const getById = (orderId) => {
     return db.query('select * from orders where id=?', [orderId])
 }
+
 const getByStatus = (task, status) => {
     return db.query('select * from orders where task=? and status = ?', [task, status]);
 }
@@ -15,6 +17,7 @@ const getByStatus = (task, status) => {
 const getByUser = (userId) => {
     return db.query('select * from orders where user_id=?', [userId])
 }
+
 const getUserStatus = (userId, status) => {
     return db.query('select * from orders where user_id=? and status=?', [userId, status])
 }
