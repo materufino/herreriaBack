@@ -1,8 +1,11 @@
+###
 POST http://localhost:3000/api/clients
 Content-Type: application/json
+
 {
-    "name": "Rigoberto",
-    "surname":"El cojo",
+    "name": "Rigoberta",
+    "surname":"La coja",
+    "dni":"58879847P"
 }
 
 ###
