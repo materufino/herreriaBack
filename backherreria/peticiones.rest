@@ -1,7 +1,5 @@
 POST http://localhost:3000/api/clients
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODUyNjcwMDQsImlhdCI6MTY3NzQ5NDYwNH0.9ewSj-i4qXuJ_OBy0a3AHKE8-2B7XSE7Na8qO5DpFhc
-
 {
     "name": "Rigoberto",
     "surname":"El cojo",

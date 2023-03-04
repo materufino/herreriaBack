@@ -11,7 +11,7 @@ const getById = (orderId) => {
 }
 
 const getByStatus = (task, status) => {
-    return db.query('select * from orders where task=? and status = ?', [task, status]);
+    return db.query('select * from orders where task=? and order_status = ?', [task, status]);
 }
 
 const getByUser = (userId) => {
@@ -19,7 +19,7 @@ const getByUser = (userId) => {
 }
 
 const getUserStatus = (userId, status) => {
-    return db.query('select * from orders where user_id=? and status=?', [userId, status])
+    return db.query('select * from orders where user_id=? and order_status=?', [userId, status])
 }
 
 //POST
@@ -34,10 +34,10 @@ const create = ({ task, product_type, product_subtype, order_status, price, obs,
 
 //PUT
 
-const update = (orderId, { product_type, product_subtype, task, status, sub_task, sub_task_status, sub_task2, sub_task2_status, sub_task3, sub_task3_status, start_date, end_date, delivery_date, deadline, price, paid, obs, user_id }) => {
+const update = (orderId, { task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id }) => {
     return db.query(
-        'update orders set product_type=?, product_subtype=?, task=?, status=?, sub_task=?, sub_task_status=?, sub_task2=?, sub_task2_status=?, sub_task3=?, sub_task3_status=?, start_date=?, end_date=?, delivery_date=?, deadline=?, price=?, paid=?, obs=?, user_id= ? where id = ?',
-        [product_type, product_subtype, task, status, sub_task, sub_task_status, sub_task2, sub_task2_status, sub_task3, sub_task3_status, start_date, end_date, delivery_date, deadline, price, paid, obs, user_id, orderId]
+        'update orders set task= ?, product_type= ?, product_subtype= ?, order_status= ?, price= ?, obs= ?, client_id= ?, user_id= ?, sub_task1= ?, sub_task2= ?, sub_task3= ?, product_id where id = ?',
+        [task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id, orderId]
     )
 }
 
