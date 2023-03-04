@@ -10,10 +10,10 @@ const getById = (clientId) => {
 
 //POST
 
-const create = ({ name, surname }) => {
+const create = ({ name, surname, dni }) => {
     return db.query(
-        'insert into clients (name, surname) values (?, ?)',
-        [name, surname]
+        'insert into clients (name, surname,dni) values (?, ?,?)',
+        [name, surname, dni]
     );
 }
 
@@ -21,10 +21,10 @@ const create = ({ name, surname }) => {
 
 //PUT
 
-const update = (clientId, { name, surname, address, birthdate, email, age }) => {
+const update = (clientId, { name, surname, user_id, dni }) => {
     return db.query(
-        'update clients set name=?, surname=?, address=?, birthdate=?, email=?,age=?  where id = ?',
-        [name, surname, address, birthdate, email, age, clientId]
+        'update clients set name=?, surname=?, user_id=?, dni=?  where id = ?',
+        [name, surname, user_id, dni, clientId]
     )
 }
 
