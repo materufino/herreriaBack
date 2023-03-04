@@ -3,35 +3,34 @@
 const getAll = () => {
     return db.query('select * from users');
 }
-const getByEmail = (email) => {
-    return db.query('select * from users where email = ?', [email]);
+const getByUsername = (username) => {
+    return db.query('select * from users where username = ?', [username]);
 }
 const getById = (userId) => {
     return db.query('select * from users where id = ?', [userId]);
 }
 const getByRange = (userRange) => {
-    return db.query('select * from users where range = ?', [userRange]);
+    return db.query('select * from users where rango = ?', [userRange]);
 }
-const getByGuild = (userGuild) => {
-    return db.query('select * from users where guild = ?', [userGuild]);
+const getByCategory = (category) => {
+    return db.query('select * from users where category = ?', [category]);
 }
 
 //POST
-
-const create = async ({ name, surname, rango, password, username }) => {
+const create = async ({ name, surname, rango, password, username, category }) => {
     return await db.query(
-        'insert into users (name, surname, rango, password,username) values (?,?, ?, ?, ?)',
-        [name, surname, rango, password, username]
+        'insert into users (name, surname, rango, password,username,category) values (?,?, ?, ?, ?,?)',
+        [name, surname, rango, password, username, category]
     )
 }
 
 
 //PUT
 
-const update = (userId, { name, surname, range, guild, email, password }) => {
+const update = (userId, { name, surname, rango, password, username, category }) => {
     return db.query(
-        'update users set name=?, surname=?,range=?,guild=?,email=?,password=?  where id = ?',
-        [name, surname, range, guild, userId, email, password]
+        'update users set name=?, surname=?, rango=?, password=?, username=?, category=?  where id = ?',
+        [name, surname, rango, password, username, category]
     )
 }
 
@@ -42,5 +41,5 @@ const deleteById = (userId) => {
 }
 
 module.exports = {
-    getAll, getById, getByRange, getByGuild, getByEmail, create, update, deleteById
+    getAll, getById, getByRange, getByCategory, getByUsername, create, update, deleteById
 }

@@ -3,7 +3,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const { createToken } = require('../../helpers/utils');
-const { getAll, getById, getByRange, getByGuild, getByEmail, create, update, deleteById } = require('../../models/user.model');
+const { getAll, getById, getByRange, getByCategory, getByUsername, create, update, deleteById } = require('../../models/user.model');
 
 router.post('/register', async (req, res) => {
     try {
@@ -20,7 +20,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 
-    const [users] = await getByEmail(req.body.email);
+    const [users] = await getByUsername(req.body.username);
     if (users.length === 0) {
         return res.json({ fatal: 'Error usuario y/o contraseña' });
     }
@@ -62,11 +62,11 @@ router.get('/:userId', async (req, res) => {
         res.json({ fatal: error.message });
     }
 });
-router.get('/:range', async (req, res) => {
-    const { range } = req.params;
+router.get('/:rango', async (req, res) => {
+    const { rango } = req.params;
 
     try {
-        const [result] = await getByRange(range);
+        const [result] = await getByRange(rango);
         if (result.length === 0) {
             res.json({ fatal: 'No se ha encontrado el rango' });
         }
@@ -75,13 +75,13 @@ router.get('/:range', async (req, res) => {
         res.json({ fatal: error.message });
     }
 });
-router.get('/:guild', async (req, res) => {
-    const { guild } = req.params;
+router.get('/:category', async (req, res) => {
+    const { category } = req.params;
 
     try {
-        const [result] = await getByGuild(guild);
+        const [result] = await getByCategory(category);
         if (result.length === 0) {
-            res.json({ fatal: 'No se ha encontrado el gremio' });
+            res.json({ fatal: 'No se ha encontrado la categoria' });
         }
         res.json(result[0]);
     } catch (error) {

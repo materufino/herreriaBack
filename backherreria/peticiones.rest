@@ -12,11 +12,12 @@ POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "name": "Miquel",
+    "name": "Nil",
     "surname":"Abella",
-    "rango":"admin",
+    "rango":"oficial",
     "password": "password",
-    "username": "MiquelMiquel"
+    "username": "NilAL",
+    "category":"herrero"
     
 }
 
@@ -25,7 +26,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "username": "mag",
+    "username": "NilAL",
     "password": "password"
 }
 
@@ -38,17 +39,28 @@ GET http://localhost:3000/api/users
 
 ###
 GET http://localhost:3000/api/clients
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODUyNjcwMDQsImlhdCI6MTY3NzQ5NDYwNH0.9ewSj-i4qXuJ_OBy0a3AHKE8-2B7XSE7Na8qO5DpFhc
+
 
 ###
 POST http://localhost:3000/api/orders
 Content-Type: application/json
 
 {
-    "task": "fabricar"
-}
-
-
+   "task":"fabricar",
+   "product_type":"espada",
+   "product_subtype":"mandoble",
+   "order_status":"active",
+   "start_date":"2023/08/21",
+   "end_date":"",
+   "price":"234",
+   "obs":"Estamos creando la empuñadura desde cero",
+   "sub_task1":"pulir",
+   "sub_task2":"afilar",
+   "sub_task3":"",
+   "sub_task1_status":"proceso",
+   "sub_task2_status":"termianda",
+   "sub_task3_status":""
+  }
 
 
 ###

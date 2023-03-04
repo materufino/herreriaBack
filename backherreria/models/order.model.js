@@ -24,19 +24,13 @@ const getUserStatus = (userId, status) => {
 
 //POST
 
-/* const create = ({ task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id }) => {
+const create = ({ task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id }) => {
     return db.query(
         'insert into orders (task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id) values (?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)',
         [task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id]
     );
 }
- */
-const create = ({ task }) => {
-    return db.query(
-        'insert into orders (task) values (?)',
-        [task]
-    );
-}
+
 
 //PUT
 

@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('./:task/:status', async (req, res) => {
+router.get('/:task/:status', async (req, res) => {
     const { task, status } = req.params;
     try {
         const [result] = await getByStatus(task, status)
@@ -27,7 +27,7 @@ router.get('./:task/:status', async (req, res) => {
     }
 })
 
-router.get('./:userId', async (req, res) => {
+router.get('/:userId', async (req, res) => {
     const { userId } = req.params;
     try {
         const [result] = await getByUser(userId)
@@ -39,7 +39,7 @@ router.get('./:userId', async (req, res) => {
         res.json({ fatal: error.message })
     };
 })
-router.get('./:userId/:status', async (req, res) => {
+router.get('/:userId/:status', async (req, res) => {
     const { userId, status } = req.params;
     try {
         const [result] = await getUserStatus(userId, status)
@@ -54,7 +54,7 @@ router.get('./:userId/:status', async (req, res) => {
 
 //POST
 
-router.post('./', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const [result] = await create(req.body);
         const [order] = await getById(result.insertId);
@@ -68,7 +68,7 @@ router.post('./', async (req, res) => {
 
 //PUT
 
-router.put('./:orderId', async (req, res) => {
+router.put('/:orderId', async (req, res) => {
     const { orderId } = req.params;
     try {
         const [result] = await update(orderId, req.body)
@@ -82,7 +82,7 @@ router.put('./:orderId', async (req, res) => {
 
 //DELETE
 
-router.delete('./:orderId', async (req, res) => {
+router.delete('/:orderId', async (req, res) => {
     const { orderId } = req.params
     try {
         const [result] = await deleteById(orderId)
