@@ -5,20 +5,19 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2
 {
     "name": "Rigoberto",
     "surname":"El cojo",
-    "address":"El puente roto a la derecha",
-    "birthdate":"1983-01-15",
-    "email":"rigobertocojo@gmail.com",
-    "age":"40"
 }
+
 ###
 POST http://localhost:3000/api/users/register
 Content-Type: application/json
 
 {
-    "username": "Miquel",
+    "name": "Miquel",
     "surname":"Abella",
-    "range":"maestre",
-    "password": "password"    
+    "rango":"admin",
+    "password": "password",
+    "username": "MiquelMiquel"
+    
 }
 
 ###
@@ -26,7 +25,7 @@ POST http://localhost:3000/api/users/login
 Content-Type: application/json
 
 {
-    "email": "mag@gmail.com",
+    "username": "mag",
     "password": "password"
 }
 
@@ -40,3 +39,18 @@ GET http://localhost:3000/api/users
 ###
 GET http://localhost:3000/api/clients
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODUyNjcwMDQsImlhdCI6MTY3NzQ5NDYwNH0.9ewSj-i4qXuJ_OBy0a3AHKE8-2B7XSE7Na8qO5DpFhc
+
+###
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+    "task": "fabricar"
+}
+
+
+
+
+###
+GET http://localhost:3000/api/orders
+

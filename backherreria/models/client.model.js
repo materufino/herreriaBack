@@ -10,10 +10,10 @@ const getById = (clientId) => {
 
 //POST
 
-const create = ({ name, surname, address, birthdate, email, age }) => {
+const create = ({ name, surname }) => {
     return db.query(
-        'insert into clients (name, surname, address, birthdate, email,age ) values (?, ?, ?, ?, ?,?)',
-        [name, surname, address, birthdate, email, age]
+        'insert into clients (name, surname) values (?, ?)',
+        [name, surname]
     );
 }
 

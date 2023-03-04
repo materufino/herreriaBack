@@ -4,7 +4,7 @@ const { getAll, getById, getByStatus, getByUser, getUserStatus, create, update, 
 
 //GET
 
-router.get('./', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const [result] = await getAll();
         res.json(result);

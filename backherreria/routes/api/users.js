@@ -7,7 +7,7 @@ const { getAll, getById, getByRange, getByGuild, getByEmail, create, update, del
 
 router.post('/register', async (req, res) => {
     try {
-        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        req.body.password = bcrypt.hashSync(req.body.password, 5);
 
         const [result] = await create(req.body);
         const [user] = await getById(result.insertId)

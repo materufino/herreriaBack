@@ -18,10 +18,10 @@ const getByGuild = (userGuild) => {
 
 //POST
 
-const create = ({ username, surname, range, password }) => {
-    return db.query(
-        'insert into users (username, surname, range, password) values (?, ?, ?, ?)',
-        [username, surname, range, password]
+const create = async ({ name, surname, rango, password, username }) => {
+    return await db.query(
+        'insert into users (name, surname, rango, password,username) values (?,?, ?, ?, ?)',
+        [name, surname, rango, password, username]
     )
 }
 
