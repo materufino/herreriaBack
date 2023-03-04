@@ -30,7 +30,7 @@ const create = async ({ name, surname, rango, password, username, category }) =>
 const update = (userId, { name, surname, rango, password, username, category }) => {
     return db.query(
         'update users set name=?, surname=?, rango=?, password=?, username=?, category=?  where id = ?',
-        [name, surname, rango, password, username, category]
+        [name, surname, rango, password, username, category, userId]
     )
 }
 

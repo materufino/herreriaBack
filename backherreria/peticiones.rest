@@ -64,3 +64,9 @@ Content-Type: application/json
 ###
 GET http://localhost:3000/api/orders
 
+###
+PUT http://localhost:3000/api/orders/4
+
+{
+    "task":"reparar"
+}

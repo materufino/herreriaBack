@@ -36,7 +36,7 @@ const create = ({ task, product_type, product_subtype, order_status, price, obs,
 
 const update = (orderId, { task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id }) => {
     return db.query(
-        'update orders set task= ?, product_type= ?, product_subtype= ?, order_status= ?, price= ?, obs= ?, client_id= ?, user_id= ?, sub_task1= ?, sub_task2= ?, sub_task3= ?, product_id where id = ?',
+        'update orders set task= ?, product_type= ?, product_subtype= ?, order_status= ?, price= ?, obs= ?, client_id= ?, user_id= ?, sub_task1= ?, sub_task2= ?, sub_task3= ?, product_id=? where id = ?',
         [task, product_type, product_subtype, order_status, price, obs, client_id, user_id, sub_task1, sub_task2, sub_task3, product_id, orderId]
     )
 }
