@@ -69,7 +69,21 @@ GET http://localhost:3000/api/orders
 
 ###
 PUT http://localhost:3000/api/orders/4
+Content-Type: application/json
 
 {
-    "task":"reparar"
-}
+   "task":"fabricar",
+   "product_type":"espada",
+   "product_subtype":"mandoble",
+   "order_status":"active",
+   "start_date":"2023-08-21",
+   "end_date":"",
+   "price":"234",
+   "obs":"Estamos creando la empuñadura desde cero",
+   "sub_task1":"pulir",
+   "sub_task2":"afilar",
+   "sub_task3":"",
+   "sub_task1_status":"proceso",
+   "sub_task2_status":"termianda",
+   "sub_task3_status":""
+  }
