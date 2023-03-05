@@ -27,7 +27,7 @@ router.get('/:task/:status', async (req, res) => {
     }
 })
 
-router.get('/:userId', async (req, res) => {
+/* router.get('/:userId', async (req, res) => {
     const { userId } = req.params;
     try {
         const [result] = await getByUser(userId)
@@ -38,7 +38,27 @@ router.get('/:userId', async (req, res) => {
     catch (error) {
         res.json({ fatal: error.message })
     };
+
 })
+ */
+
+router.get('/:orderId', async (req, res) => {
+    const { orderId } = req.params;
+    try {
+        const [result] = await getById(orderId)
+        if (result.length === 0) {
+            res.json({ fatal: 'No se ha encontrado esta orden' })
+        }
+    }
+    catch (error) {
+        res.json({ fatal: error.message })
+    };
+
+})
+
+
+
+/* 
 router.get('/:userId/:status', async (req, res) => {
     const { userId, status } = req.params;
     try {
@@ -50,7 +70,7 @@ router.get('/:userId/:status', async (req, res) => {
     catch (error) {
         res.json({ fatal: error.message })
     };
-})
+}) */
 
 //POST
 
@@ -71,7 +91,7 @@ router.post('/', async (req, res) => {
 router.put('/:orderId', async (req, res) => {
     const { orderId } = req.params;
     try {
-        const [result] = await update(orderId, req.body)
+        const [res] = await update(orderId, req.body)
         const [order] = await getById(orderId)
         res.json(order[0]);
     }

@@ -43,14 +43,14 @@ GET http://localhost:3000/api/clients
 
 
 ###
-POST http://localhost:3000/api/orders
+POST http://localhost:3000/api/orders/
 Content-Type: application/json
 
 {
    "task":"fabricar",
    "product_type":"espada",
    "product_subtype":"mandoble",
-   "order_status":"active",
+   "order_status":"Pendiente",
    "start_date":"2023/08/21",
    "end_date":"",
    "price":"234",
@@ -61,11 +61,17 @@ Content-Type: application/json
    "sub_task1_status":"proceso",
    "sub_task2_status":"termianda",
    "sub_task3_status":""
-  }
+}
+
 
 
 ###
-GET http://localhost:3000/api/orders
+GET http://localhost:3000/api/orders/2
+
+
+
+
+
 
 ###
 PUT http://localhost:3000/api/orders/4
