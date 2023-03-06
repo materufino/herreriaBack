@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getAll, getById, create, update, deleteById } = require('../../models/client.model');
+const { getAll, getById, getByUserId, create, update, deleteById } = require('../../models/client.model');
 
 //GET
 
@@ -26,6 +26,21 @@ router.get('/:clientId', async (req, res) => {
         res.json({ fatal: error.message });
     }
 });
+
+router.get('/user/:userId', async (req, res) => {
+    const { userId } = req.params;
+    try {
+        const [result] = await getByUserId(userId);
+
+        if (result.length === 0) {
+            res.json({ fatal: 'No se han encontrado clientes asignados al herrero especificado' });
+        }
+
+        res.json(result);
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+})
 
 //POST
 

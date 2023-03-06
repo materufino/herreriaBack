@@ -8,6 +8,9 @@ const getById = (clientId) => {
     return db.query('select * from clients where id = ?', [clientId]);
 }
 
+const getByUserId = (userId) => {
+    return db.query('select * from clients where user_id=?', [userId]);
+}
 //POST
 
 const create = ({ name, surname, dni }) => {
@@ -35,5 +38,5 @@ const deleteById = (clientId) => {
 }
 
 module.exports = {
-    getAll, getById, create, update, deleteById
+    getAll, getById, getByUserId, create, update, deleteById
 }
