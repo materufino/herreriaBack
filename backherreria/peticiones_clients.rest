@@ -1,0 +1,51 @@
+
+
+//GET
+
+###
+//Devuelve una lista de todos los clientes
+GET http://localhost:3000/api/clients
+
+###
+//Devuelve el cliente con la id especificada en la url
+GET http://localhost:3000/api/clients/15
+
+###
+//Devuelve un listado de clientes que tienen asignado al herrero con la id especificada en la url
+GET http://localhost:3000/api/clients/user/16
+
+
+//POST
+
+###
+//Crea un nuevo cliente
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+    "name": "Rigoberto",
+    "surname":"El manco",
+    "user_id":"15",
+    "dni":"58879457W"
+}
+
+//PUT
+
+###
+//Modifica el cliente con la id especificada en la url
+PUT http://localhost:3000/api/clients/15
+Content-Type: application/json
+
+{
+     "name": "Rigoberto",
+    "surname":"El manco",
+    "user_id":"16",
+    "dni":"58879457L"
+}
+
+//DELETE
+
+###
+//Elimina el cliente con la id especificada en la url
+DELETE  http://localhost:3000/api/clients/15
+

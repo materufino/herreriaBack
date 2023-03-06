@@ -1,0 +1,96 @@
+
+//GET
+
+###
+//Obtener una lista de todos los pedidos
+GET http://localhost:3000/api/orders
+
+###
+//Obtener un pedido determinado en base a su id
+GET http://localhost:3000/api/orders/19
+
+###
+//Obtener una lista de pedidos en base a la id de un herrero
+GET http://localhost:3000/api/orders/user/15
+
+
+###
+//Obtener una lista de pedidos de una tarea concreta especificada en la url
+GET http://localhost:3000/api/orders/tarea/fabricar
+
+###
+//Obtener una lista de pedidos de una tarea concreta con un estado concreto especificados en la url
+GET http://localhost:3000/api/orders/tarea/fabricar/pendiente
+
+###
+//Obtener una lista de pedidos con un status concreto especificado en la url
+GET http://localhost:3000/api/orders/status/pendiente
+
+###
+//Obtener una lista de pedidos de un herrero que tengan un estatus concreto, en el ejemplo una lista de pedidos pendientes del herrero con id número 15
+GET http://localhost:3000/api/orders/user/15/pendiente
+
+
+
+//POST
+
+###
+//Crear un pedido nuevo
+POST http://localhost:3000/api/orders/
+Content-Type: application/json
+
+{
+   "task":"fabricar",
+   "product_type":"espada",
+   "product_subtype":"mandoble",
+   "order_status":"Pendiente",
+   "start_date":"2023/08/21",
+   "end_date":"",
+   "price":"234",
+   "obs":"Estamos creando la empuñadura desde cero",
+   "client_id":"15",
+   "user_id":"15",
+   "sub_task1":"pulir",
+   "sub_task2":"afilar",
+   "sub_task3":"",
+   "sub_task1_status":"proceso",
+   "sub_task2_status":"termianda",
+   "sub_task3_status":""
+}
+
+
+
+//PUT
+
+###
+//Modificar un pedido determinado en base a la id especificada en la url
+PUT http://localhost:3000/api/orders/17
+Content-Type: application/json
+
+{
+   "task":"fabricar",
+   "product_type":"espada",
+   "product_subtype":"mandoble",
+   "order_status":"active",
+   "start_date":"2023-08-21",
+   "end_date":"",
+   "price":"234",
+   "obs":"Estamos creando la empuñadura desde cero",
+   "client_id":"15",
+   "user_id":"15",
+   "sub_task1":"pulir",
+   "sub_task2":"afilar",
+   "sub_task3":"",
+   "sub_task1_status":"proceso",
+   "sub_task2_status":"termianda",
+   "sub_task3_status":""
+  }
+  
+
+
+
+//DELETE
+
+###
+//Elimina el pedido con la id especificada en la url
+DELETE http://localhost:3000/api/orders/17

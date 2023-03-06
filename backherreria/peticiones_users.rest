@@ -1,0 +1,75 @@
+
+
+//GET
+
+
+###
+//Devuelve una lista con todos los herreros
+GET http://localhost:3000/api/users
+
+
+###
+//Devuelve el herrero con la id especificada en la url
+GET http://localhost:3000/api/users/16
+
+
+###
+//Devuelve un listado de herreros que tienen el rango especificado en la url
+GET http://localhost:3000/api/users/rango/admin
+
+
+###
+//Devuelve un listado de herreros que tienen la categoria especificada en la url
+GET http://localhost:3000/api/users/categoria/herrero
+
+
+//POST
+
+###
+//Creación de un nuevo herrero
+POST http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "name": "Nil",
+    "surname":"Abella",
+    "rango":"oficial",
+    "password": "password",
+    "username": "NilAL",
+    "category":"herrero"
+    
+}
+ 
+###
+//Login de un herrero ya existente
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "username": "NilAL",
+    "password": "password"
+}
+
+//PUT
+
+###
+//Modificación del herrero con la id especificada en la url
+PUT http://localhost:3000/api/users/17
+Content-Type: application/json
+
+{
+    "name": "Nil",
+    "surname":"Abella",
+    "rango":"admin",
+    "password": "password",
+    "username": "NilAL",
+    "category":"herrero"
+}
+
+//DELETE
+
+###
+//Elimina el herrero con la id especificada en la url
+DELETE http://localhost:3000/api/users/15
+
+
