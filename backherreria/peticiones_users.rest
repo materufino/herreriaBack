@@ -36,7 +36,7 @@ Content-Type: application/json
     "rango":"oficial",
     "password": "password",
     "username": "NilAL",
-    "category":"herrero"
+    "category":"armas"
     
 }
  
@@ -54,18 +54,16 @@ Content-Type: application/json
 
 ###
 //Modificación del herrero con la id especificada en la url
-PUT http://localhost:3000/api/users/17
+PUT http://localhost:3000/api/users/16
 Content-Type: application/json
 
-{
-    "name": "Nil",
-    "surname":"Abella",
-    "rango":"admin",
-    "password": "password",
-    "username": "NilAL",
-    "category":"herrero"
-}
-
+{"name": "Miquel",
+    "surname": "Abella",
+    "rango": "oficial",
+    "password": "$2a$05$U0Esgf0sKfQPkzFVglD6wucldoTUCLsMgL23gGGO6zPIMmiLvdTSC",
+    "username": "MiquelAL",
+    "category": "Armas"
+  }
 //DELETE
 
 ###
