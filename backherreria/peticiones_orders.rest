@@ -36,7 +36,7 @@ GET http://localhost:3000/api/orders/user/15/pendiente
 
 ###
 //Crear un pedido nuevo
-POST http://localhost:3000/api/orders/
+POST http://localhost:3000/api/orders
 Content-Type: application/json
 
 {
