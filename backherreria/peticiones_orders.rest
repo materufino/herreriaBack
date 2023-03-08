@@ -11,7 +11,7 @@ GET http://localhost:3000/api/orders/19
 
 ###
 //Obtener una lista de pedidos en base a la id de un herrero
-GET http://localhost:3000/api/orders/user/15
+GET http://localhost:3000/api/orders/user/1
 
 
 ###
@@ -41,15 +41,15 @@ Content-Type: application/json
 
 {
    "task":"fabricar",
-   "product_type":"espada",
-   "product_subtype":"mandoble",
+   "product_type":"Espada",
+   "product_subtype":"Espada de dos manos",
    "order_status":"Pendiente",
    "start_date":"2023/08/21",
    "end_date":"",
    "price":"234",
    "obs":"Estamos creando la empuñadura desde cero",
-   "client_id":"15",
-   "user_id":"15",
+   "client_id":"3",
+   "user_id":"1",
    "sub_task1":"pulir",
    "sub_task2":"afilar",
    "sub_task3":"",
@@ -64,25 +64,25 @@ Content-Type: application/json
 
 ###
 //Modificar un pedido determinado en base a la id especificada en la url
-PUT http://localhost:3000/api/orders/17
+PUT http://localhost:3000/api/orders/9
 Content-Type: application/json
 
 {
    "task":"fabricar",
-   "product_type":"espada",
-   "product_subtype":"mandoble",
-   "order_status":"active",
+   "product_type":"Espada",
+   "product_subtype":"Espada de dos manos",
+   "order_status":"Finalizado",
    "start_date":"2023-08-21",
    "end_date":"",
    "price":"234",
    "obs":"Estamos creando la empuñadura desde cero",
-   "client_id":"15",
-   "user_id":"15",
+   "client_id":"3",
+   "user_id":"1",
    "sub_task1":"pulir",
    "sub_task2":"afilar",
    "sub_task3":"",
-   "sub_task1_status":"proceso",
-   "sub_task2_status":"termianda",
+   "sub_task1_status":"finalizado",
+   "sub_task2_status":"finalizado",
    "sub_task3_status":""
   }
   
