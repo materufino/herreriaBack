@@ -11,7 +11,7 @@ GET http://localhost:3000/api/orders/19
 
 ###
 //Obtener una lista de pedidos en base a la id de un herrero
-GET http://localhost:3000/api/orders/user/16
+GET http://localhost:3000/api/orders/user/15
 
 
 ###
@@ -36,7 +36,7 @@ GET http://localhost:3000/api/orders/user/15/pendiente
 
 ###
 //Crear un pedido nuevo
-POST http://localhost:3000/api/orders
+POST http://localhost:3000/api/orders/
 Content-Type: application/json
 
 {
@@ -64,20 +64,20 @@ Content-Type: application/json
 
 ###
 //Modificar un pedido determinado en base a la id especificada en la url
-PUT http://localhost:3000/api/orders/19
+PUT http://localhost:3000/api/orders/17
 Content-Type: application/json
 
 {
    "task":"fabricar",
    "product_type":"espada",
    "product_subtype":"mandoble",
-   "order_status":"pendiente",
+   "order_status":"active",
    "start_date":"2023-08-21",
    "end_date":"",
    "price":"234",
    "obs":"Estamos creando la empuñadura desde cero",
    "client_id":"15",
-   "user_id":"16",
+   "user_id":"15",
    "sub_task1":"pulir",
    "sub_task2":"afilar",
    "sub_task3":"",
