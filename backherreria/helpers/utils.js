@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const createToken = (user) => {
     const obj = {
         user_id: user.id,
-        user_range: user.range,
+        user_rango: user.rango,
         exp: dayjs().add(90, 'days').unix()
     }
     return jwt.sign(obj, 'nisi electi praeteribit');
