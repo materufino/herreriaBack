@@ -3,6 +3,8 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const { createToken } = require('../../helpers/utils');
+
+
 const { getAll, getById, getByRange, getByCategory, getByUsername, create, update, deleteById } = require('../../models/user.model');
 
 
@@ -31,6 +33,7 @@ router.get('/:userId', async (req, res) => {
         res.json({ fatal: error.message });
     }
 });
+
 router.get('/rango/:rango', async (req, res) => {
     const { rango } = req.params;
 
